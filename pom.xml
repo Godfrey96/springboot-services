@@ -17,6 +17,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>department-service</module>
+        <module>organizations-service</module>
     </modules>
 
     <properties>

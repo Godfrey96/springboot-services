@@ -8,6 +8,10 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
+
 @Service
 @RequiredArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
@@ -15,10 +19,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final DepartmentRepository departmentRepository;
     private final ModelMapper modelMapper;
 
-//    public DepartmentServiceImpl(DepartmentRepository departmentRepository, ModelMapper modelMapper) {
-//        this.departmentRepository = departmentRepository;
-//        this.modelMapper = modelMapper;
-//    }
+    @Override
+    public List<DepartmentDto> getAllDepartments() {
+        List<Department> departments = departmentRepository.findAll();
+        return departments.stream().map(this::mapToDTO).collect(toList());
+    }
 
     @Override
     public DepartmentDto addNewDepartment(DepartmentDto departmentDto) {
