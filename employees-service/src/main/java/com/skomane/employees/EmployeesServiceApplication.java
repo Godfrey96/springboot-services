@@ -1,4 +1,4 @@
-package com.skomane.department;
+package com.skomane.employees;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class DepartmentServiceApplication {
+public class EmployeesServiceApplication {
 
 	@Bean
 	public ModelMapper modelMapper(){
@@ -16,7 +16,7 @@ public class DepartmentServiceApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(DepartmentServiceApplication.class, args);
+		SpringApplication.run(EmployeesServiceApplication.class, args);
 	}
 
 }
