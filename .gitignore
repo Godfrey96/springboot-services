@@ -1,3 +1,5 @@
 /.idea
 /department-service/target
 /organizations-service/target
+/employees-service/target
+/discovery-server/target
